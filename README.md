@@ -107,7 +107,7 @@ Once ticket-9 was tested, accepted, and merged into master, the sync job would t
 
 Sometimes you might want to build not the underlying source branch of a merge request, but the actual merge result - source merged into target. Make your template job that is building origin/master a parameterized build.
 
-Use String parameter MERGE_REMOTE to specify the remote repo (Default value ex: git://git.assembla.com:your-space.git) and MERGE_BRANCH to specify the remote branch (Default value ex: master). For each job added by JAMRb, default values for these parameters will be changed to target remote and target branch from the merge request. Also, add a build step to do the actual merge - Execute Shell - `git pull $MERGE_REMOTE $MERGE_BRANCH`.
+Use String parameter MERGE_REMOTE to specify the remote repo (Default value ex: git://git.assembla.com:your-space.git) and MERGE_BRANCH to specify the remote branch (Default value ex: master). For each job added by JAMRb, these parameters will be set to target remote ("To" repository) and target branch ("To" branch) from the merge request. Also, add a build step to do the actual merge - Execute Shell - `git pull $MERGE_REMOTE $MERGE_BRANCH`.
 
 ## Thanks ##
 
